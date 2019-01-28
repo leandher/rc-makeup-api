@@ -1,18 +1,15 @@
 import React from 'react';
 
-import ChevronDown from './assets/ChevronDown';
-import ChevronUp from './assets/ChevronUp';
-
 import './Table.css';
 
-const renderIcon = orderBy => {
+const getClass = orderBy => {
   switch (orderBy) {
     case 'asc':
-      return <ChevronDown />;
+      return 'Down';
     case 'desc':
-      return <ChevronUp />;
+      return 'Up';
     default:
-      return null;
+      return '';
   }
 };
 
@@ -40,7 +37,7 @@ export default function Cell({
 
   const cellMarkup = header ? (
     <th
-      className="Cell Cell-Header"
+      className={`Cell Cell-Header ${currentKey && getClass(orderBy)}`}
       width={width || '100px'}
       onClick={sortable ? onClick : () => {}}
       {...sortable && { style: { cursor: 'pointer' } }}
@@ -48,7 +45,6 @@ export default function Cell({
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div className="Cell-Header-Content">
           <span>{content}</span>
-          {sortable && renderIcon(orderBy)}
         </div>
       </div>
     </th>
