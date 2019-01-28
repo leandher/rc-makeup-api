@@ -29,6 +29,10 @@
   vertical-align: middle;
 }
 
+tbody tr:hover {
+  background-color: rgba(224, 224, 224, 1);
+}
+
 .Cell {
   display: table-cell;
   padding: 4px;
