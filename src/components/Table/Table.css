@@ -1,0 +1,142 @@
+.Wrapper {
+  width: 100%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  max-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+.Table-Container {
+  overflow-x: auto;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.Table {
+  width: 100%;
+  display: table;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.Row {
+  color: inherit;
+  height: 48px;
+  display: table-row;
+  outline: none;
+  vertical-align: middle;
+}
+
+.Cell {
+  display: table-cell;
+  padding: 4px;
+  text-align: center;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  vertical-align: inherit;
+}
+
+.Cell-Header {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  background-color: #fff;
+}
+
+.Cell-Header-Content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  align-self: center;
+}
+
+.Cell-Body {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.Pagination-Container {
+  height: 56px;
+  min-height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(224, 224, 224, 1);
+}
+
+/* Pagination component style */
+.pagination {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  z-index: 2;
+  color: rgba(0, 0, 0, 0.80);
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  z-index: 3;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.54);
+  border-color: rgba(0, 0, 0, 0.54);
+  cursor: default;
+}
+.pagination > .disabled > a,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > span,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > span:hover {
+  color: #777;
+  background-color: #fff;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

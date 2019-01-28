@@ -1,0 +1,20 @@
+.Segment {
+  background: #ffffff;
+  border: 1px solid #c9c9c9;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-bottom: 40px;
+  position: relative;
+  padding: 20px;
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+
+@media (max-width: 639px) {
+  .Segment {
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+}

@@ -1,0 +1,48 @@
+.select__menu {
+  z-index: 1000 !important;
+}
+
+.Fields-Container {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  height: auto;
+  zoom: 1;
+  display: block;
+  box-sizing: border-box;
+}
+
+.Field, .Button-Container {
+  display: block;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.Fields-Container .Field {
+  font-size: 14px;  
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  padding: 0;
+  list-style: none;
+  margin: 0 0 24px;
+  vertical-align: top;
+}
+
+.Field-Label {
+  text-align: right;
+  vertical-align: middle;
+  line-height: 39.9999px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Field-Input {
+  display: block;
+  box-sizing: border-box;
+  width: 66.66666667%;
+}
