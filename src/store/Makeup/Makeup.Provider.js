@@ -8,6 +8,7 @@ const { withSpinnerContext } = Spinner;
 const DEFAULT_STATE = {
   products: [],
   tags,
+  product: {},
 };
 
 export const MakeupContext = createContext(DEFAULT_STATE);
@@ -35,6 +36,21 @@ class MakeupProvider extends Component<Props> {
       });
   };
 
+  findOne = (id = '') => {
+    const { showSpinner, hideSpinner } = this.props;
+    showSpinner();
+
+    fetch(`http://makeup-api.herokuapp.com/api/v1/products/${id}.json`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ product: data });
+        hideSpinner();
+      })
+      .catch(() => {
+        hideSpinner();
+      });
+  };
+
   render() {
     const { children } = this.props;
     return (
@@ -42,6 +58,7 @@ class MakeupProvider extends Component<Props> {
         value={{
           ...this.state,
           loadProducts: this.load,
+          findOne: this.findOne,
         }}
       >
         {children}

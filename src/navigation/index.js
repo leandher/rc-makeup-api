@@ -5,7 +5,7 @@ import {
   Route, BrowserRouter as Router, Switch, Redirect,
 } from 'react-router-dom';
 
-import { ProductsList } from './Products';
+import { ProductsList, ProductDetail } from './Products';
 
 class Navigator extends Component {
   renderScreens = () => (
@@ -24,6 +24,9 @@ class Navigator extends Component {
 
       <Route exact path="/list" component={ProductsList} />
       <Route exact path="/list/:filter?" component={ProductsList} />
+
+      <Route exact path="/detail" component={ProductDetail} />
+      <Route exact path="/detail/:id" component={ProductDetail} />
 
       <Route path="/not-found" component={() => <p>NotFound</p>} />
 

@@ -29,6 +29,10 @@ const handleClickImage = ({ changeProductName, changeImageLink, changeModalVisib
   changeModalVisible(true);
 };
 
+const handleRowClick = ({ history }) => ({ id }) => {
+  history.push(`/detail/${id}`);
+};
+
 const receiveChanges = (prevProps, { match }) => {
   if (!is(prevProps.match, match)) {
     return true;
@@ -53,6 +57,7 @@ export default compose(
     handleFilter,
     handleApplyFilters,
     handleClickImage,
+    handleRowClick,
   }),
   lifecycle({
     componentDidMount() {

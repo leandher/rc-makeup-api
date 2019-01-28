@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { is } from 'immutable';
 import Select from 'react-select';
 
-import { Segment } from '../../../../../components';
+import { Segment } from '../../../../components';
 import Search from './assets/Search';
 import './Filter.css';
 

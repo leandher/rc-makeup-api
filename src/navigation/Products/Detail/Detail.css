@@ -1,0 +1,36 @@
+.Detail-Name {
+  text-align: center;
+  padding: 10px;
+}
+
+.Detail-Image {
+  width: 40%;
+  height: auto;
+}
+
+.Details h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.Main-Details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1,
+h4 {
+  font-weight: 100;
+  font-family: 'Abel', sans-serif;
+}
+
+@media (max-width: 639px) {
+  .Main-Details {
+    display: block;
+  }
+  .Detail-Image {
+    width: 100%;
+    height: auto;
+  }
+}

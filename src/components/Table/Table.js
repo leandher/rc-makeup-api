@@ -13,6 +13,7 @@ type Props = {
     renderCell: ReactElement | String | Function,
     sortable: Boolean,
   }>,
+  onRowClick: () => {},
 };
 class Table extends Component<Props> {
   state = {
@@ -87,10 +88,20 @@ class Table extends Component<Props> {
   };
 
   renderRow = (row, rowIndex) => {
-    const { columns } = this.props;
+    const { columns, onRowClick } = this.props;
 
     return (
-      <tr key={`row-${rowIndex}`} className="Row">
+      <tr
+        key={`row-${rowIndex}`}
+        className="Row"
+        role="presentation"
+        {...onRowClick && {
+          onClick: () => {
+            onRowClick(row);
+          },
+        }}
+        style={onRowClick ? { cursor: 'pointer' } : {}}
+      >
         {columns.map(cell => {
           if (cell.renderCell) {
             switch (typeof cell.renderCell) {

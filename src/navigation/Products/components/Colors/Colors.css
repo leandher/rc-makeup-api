@@ -12,7 +12,7 @@
 
 @media (max-width: 639px) {
   .Color-Section .Color {
-    width: 5px;
-    height: 5px;
+    width: 0.5em;
+    height: 0.5em;
   }
 }

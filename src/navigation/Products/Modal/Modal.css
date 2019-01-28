@@ -6,6 +6,7 @@
 .Modal img {
   display: block;
   max-width: 100%;
+  min-width: 80%;
   height: auto;
   max-height: calc(100vh - 100px);
   border: 1px solid #c9c9c9;

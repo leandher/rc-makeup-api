@@ -1,4 +1,4 @@
-#7egend Web challenge
+# 7egend Web challenge
 
 ## Available Scripts
 

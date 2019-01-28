@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Spinner, Table, Container, Segment,
 } from '../../../components';
-import { Colors, Filter, Image } from './components';
+import { Colors, Filter, Image } from '../components';
 import Modal from '../Modal';
 
 const formatNumber = (value: Number) => Number((value * 100) / 5).toFixed(2);
@@ -16,6 +16,7 @@ type Props = {
   modalVisible: Boolean,
   handleFilter: () => {},
   handleClickImage: () => {},
+  handleRowClick: () => {},
   changeModalVisible: () => {},
 };
 class List extends Component<Props> {
@@ -28,9 +29,10 @@ class List extends Component<Props> {
           <Image
             src={d.image_link}
             name={d.name}
-            onClick={() => {
+            onClick={e => {
               const { handleClickImage } = this.props;
               handleClickImage(d.name, d.image_link);
+              e.stopPropagation();
             }}
           />
         ),
@@ -68,12 +70,13 @@ class List extends Component<Props> {
     const {
       products,
       tags,
-      handleFilter,
       defaultFilters,
       productName,
       imageLink,
-      changeModalVisible,
       modalVisible,
+      handleFilter,
+      handleRowClick,
+      changeModalVisible,
     } = this.props;
 
     const { columns } = this.state;
@@ -91,7 +94,7 @@ class List extends Component<Props> {
         />
         <Filter tags={tags} onSearch={handleFilter} defaultFilters={defaultFilters} />
         <Segment style={{ maxHeight: 'calc(100vh - 40px)' }}>
-          <Table columns={columns} items={products} />
+          <Table columns={columns} items={products} onRowClick={handleRowClick} />
         </Segment>
       </Container>
     );
