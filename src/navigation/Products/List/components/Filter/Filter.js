@@ -13,9 +13,7 @@ type Props = {
 };
 class Filter extends Component<Props> {
   state = {
-    filter: {
-      product_tags: '',
-    },
+    filter: {},
   };
 
   componentDidUpdate(prevProps) {
@@ -80,9 +78,11 @@ class Filter extends Component<Props> {
     const { filter } = this.state;
 
     return (
-      <button type="button" onClick={() => onSearch(filter)}>
-        <Search />
-      </button>
+      <div className="Button-Container">
+        <button type="button" onClick={() => onSearch(filter)} className="Button">
+          <Search />
+        </button>
+      </div>
     );
   };
 
