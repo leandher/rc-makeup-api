@@ -20,6 +20,15 @@ const handleApplyFilters = ({ loadProducts, changeDefaultFilters }) => ({ filter
   loadProducts(filter);
 };
 
+const handleClickImage = ({ changeProductName, changeImageLink, changeModalVisible }) => (
+  productName,
+  imageLink,
+) => {
+  changeProductName(productName);
+  changeImageLink(imageLink);
+  changeModalVisible(true);
+};
+
 const receiveChanges = (prevProps, { match }) => {
   if (!is(prevProps.match, match)) {
     return true;
@@ -37,9 +46,13 @@ export default compose(
   withMakeupContext(),
   withRouter,
   withState('defaultFilters', 'changeDefaultFilters', {}),
+  withState('productName', 'changeProductName', ''),
+  withState('imageLink', 'changeImageLink', ''),
+  withState('modalVisible', 'changeModalVisible', false),
   withHandlers({
     handleFilter,
     handleApplyFilters,
+    handleClickImage,
   }),
   lifecycle({
     componentDidMount() {

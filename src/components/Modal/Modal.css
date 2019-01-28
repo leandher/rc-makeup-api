@@ -1,0 +1,63 @@
+.Mask {
+  width: 100%;
+  position: fixed;
+  z-index: 40;
+  background-color: black;
+  opacity: 0.5;
+  height: 100vh;
+}
+
+.Modal-Container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.Modal-Content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.CloseButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  /* box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2); */
+  z-index: 50;
+}
+
+.CloseButton::before,
+.CloseButton::after {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  left: 0.25rem;
+  width: 2rem;
+  height: 0.1rem;
+  background-color: #ffffff;
+}
+
+.CloseButton::before {
+  transform: rotate(45deg);
+}
+.CloseButton::after {
+  transform: rotate(-45deg);
+}
+
+.CloseButton:hover::before,
+.CloseButton:hover::after {
+  background-color: #cccccc;
+}

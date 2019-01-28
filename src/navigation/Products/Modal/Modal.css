@@ -1,0 +1,20 @@
+.Modal {
+  padding: 0.4rem;
+  max-height: calc(100vh - 40px);
+}
+
+.Modal img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100vh - 100px);
+  border: 1px solid #c9c9c9;
+}
+
+.ImageModal {
+  vertical-align: middle;
+}
+
+.TextModal {
+  color: #fff;
+}
