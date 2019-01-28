@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Spinner, Container, Segment } from '../../../components';
 import { Colors } from '../components';
+import Arrow from './assets/Arrow';
 
 import './Detail.css';
 
@@ -18,6 +19,12 @@ class Detail extends Component<Props> {
       if (obj.hasOwnProperty(key)) return false;
     }
     return true;
+  };
+
+  goBack = () => {
+    const { history } = this.props;
+
+    history.goBack();
   };
 
   renderProduct = () => {
@@ -69,10 +76,14 @@ class Detail extends Component<Props> {
             <strong>Tags: </strong>
             <ul>
               {tag_list.map(tag => (
-                <li>{tag}</li>
+                <li key={tag}>{tag}</li>
               ))}
             </ul>
           </h4>
+        </div>
+        <div role="presentation" className="GoBack" onClick={this.goBack}>
+          <Arrow />
+          <span style={{ margin: '0 10px' }}>Go back</span>
         </div>
       </Segment>
     );

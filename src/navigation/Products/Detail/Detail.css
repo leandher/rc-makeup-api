@@ -19,6 +19,13 @@
   align-items: center;
 }
 
+.GoBack {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
 h1,
 h4 {
   font-weight: 100;
