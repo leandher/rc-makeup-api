@@ -1,15 +1,15 @@
 import React from 'react';
 
-import './Table.css';
+import styles from './Table.module.css';
 
 const getClass = orderBy => {
   switch (orderBy) {
     case 'asc':
-      return 'Down';
+      return { boxShadow: 'inset 0 3px 0 0 rgba(0, 0, 0, 0.6)' };
     case 'desc':
-      return 'Up';
+      return { boxShadow: 'inset 0 -3px 0 0 rgba(0, 0, 0, 0.6)' };
     default:
-      return '';
+      return {};
   }
 };
 
@@ -37,19 +37,19 @@ export default function Cell({
 
   const cellMarkup = header ? (
     <th
-      className={`Cell Cell-Header ${currentKey && getClass(orderBy)}`}
+      className={[styles.Cell, styles.Cell_Header].join(' ')}
       width={width || '100px'}
       onClick={sortable ? onClick : () => {}}
-      {...sortable && { style: { cursor: 'pointer' } }}
+      {...sortable && { style: { cursor: 'pointer', ...(currentKey && getClass(orderBy)) } }}
     >
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div className="Cell-Header-Content">
+        <div className={styles.Cell_Header_Content}>
           <span>{content}</span>
         </div>
       </div>
     </th>
   ) : (
-    <td className="Cell Cell-Body" width={width || '100px'}>
+    <td className={[styles.Cell, styles.Cell_Body].join(' ')} width={width || '100px'}>
       {content}
     </td>
   );

@@ -1,6 +1,6 @@
 import React, { Component, ReactElement } from 'react';
 
-import './Header.css';
+import styles from './Header.module.css';
 
 type Props = {
   children: ReactElement,
@@ -13,8 +13,8 @@ class Header extends Component<Props> {
     const { children, title, ...rest } = this.props;
 
     return (
-      <div className="Root-Container" {...rest}>
-        <div className="Header">{title}</div>
+      <div className={styles.Root_Container} {...rest}>
+        <div className={styles.Header}>{title}</div>
         {children}
       </div>
     );

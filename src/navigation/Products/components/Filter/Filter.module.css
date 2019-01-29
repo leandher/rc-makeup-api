@@ -1,22 +1,4 @@
-.select__menu {
-  z-index: 1000 !important;
-}
-
-.select__multi-value {
-  background-color: #c9a654 !important;
-}
-
-.select__multi-value__label,
-.select__multi-value__remove {
-  color: whitesmoke !important;
-}
-
-.select__multi-value__remove:hover {
-  background-color: rgba(224, 224, 224, 0.3) !important;
-  cursor: pointer;
-}
-
-.Fields-Container {
+.Fields_Container {
   position: relative;
   margin-left: 0;
   margin-right: 0;
@@ -27,13 +9,13 @@
 }
 
 .Field,
-.Button-Container {
+.Button_Container {
   display: block;
   box-sizing: border-box;
   width: 100%;
 }
 
-.Fields-Container .Field {
+.Fields_Container .Field {
   font-size: 14px;
   -webkit-font-feature-settings: 'tnum';
   font-feature-settings: 'tnum';
@@ -47,7 +29,7 @@
   vertical-align: top;
 }
 
-.Field-Label {
+.Field_Label {
   text-align: right;
   vertical-align: middle;
   line-height: 40px;
@@ -56,7 +38,7 @@
   white-space: nowrap;
 }
 
-.Field-Input {
+.Field_Input {
   display: block;
   box-sizing: border-box;
   width: 50%;
@@ -103,14 +85,14 @@
   background-color: #b58109;
 }
 
-.Button-Content {
+.Button_Content {
   width: 100%;
   display: inherit;
   align-items: inherit;
   justify-content: inherit;
 }
 
-.Button-Overlay {
+.Button_Overlay {
   top: 0;
   left: 0;
   width: 100%;
@@ -129,11 +111,11 @@
     justify-content: space-between;
   }
 
-  .Field-Label {
+  .Field_Label {
     width: 10%;
   }
 
-  .Field-Input {
+  .Field_Input {
     width: 85%;
   }
 

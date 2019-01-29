@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal as ModalContainer } from '../../../components';
 
-import './Modal.css';
+import styles from './Modal.module.css';
 
 type Props = {
   image: String,
@@ -19,9 +19,9 @@ class Modal extends Component<Props> {
 
     return (
       <ModalContainer open={open} onClose={onClose}>
-        <div className="Modal">
-          <h3 className="TextModal">{product}</h3>
-          <img src={image} alt={product} className="ImageModal" />
+        <div className={styles.Modal}>
+          <h3 className={styles.TextModal}>{product}</h3>
+          <img src={image} alt={product} className={styles.ImageModal} />
         </div>
       </ModalContainer>
     );

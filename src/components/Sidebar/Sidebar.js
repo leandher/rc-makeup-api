@@ -3,7 +3,7 @@ import ReactSidebar from 'react-sidebar';
 import { Link } from 'react-router-dom';
 
 import Header from '../Header';
-import './Sidebar.css';
+import styles from './Sidebar.module.css';
 
 type Props = {
   children: ReactElement,
@@ -19,11 +19,11 @@ class Sidebar extends Component<Props> {
         height: '100%',
       }}
     >
-      <div className="Sidebar-List">
-        <Link to="/home" className="Sidebar-Item">
+      <div className={styles.Sidebar_List}>
+        <Link to="/home" className={styles.Sidebar_Item}>
           Home
         </Link>
-        <Link to="/list" className="Sidebar-Item">
+        <Link to="/list" className={styles.Sidebar_Item}>
           Makeup List
         </Link>
         <hr />

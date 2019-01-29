@@ -1,9 +1,9 @@
-.Sidebar-List {
+.Sidebar_List {
   padding: 16px;
   height: 100%;
   background-color: white;
 }
-.Sidebar-Item {
+.Sidebar_Item {
   display: block;
   padding: 16px 0px;
   color: #757575;

@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import './Spinner.css';
+import styles from './Spinner.module.css';
 import { Spinner as SpinnerContext } from '../../store';
 
 const { withSpinnerContext } = SpinnerContext;
@@ -20,11 +20,11 @@ class Spinner extends Component<Props> {
     if (spinning === false) return null;
 
     return (
-      <div className="Overlay">
-        <div className="Spinner">
-          <div className="Bounce1" />
-          <div className="Bounce2" />
-          <div className="Bounce3" />
+      <div className={styles.Overlay}>
+        <div className={styles.Spinner}>
+          <div className={styles.Bounce1} />
+          <div className={styles.Bounce2} />
+          <div className={styles.Bounce3} />
         </div>
       </div>
     );

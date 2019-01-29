@@ -1,8 +1,12 @@
 import React from 'react';
 
-import './Container.css';
+import styles from './Container.module.css';
 
-const Container = ({ children, ...rest }) => <div className="Container" {...rest}>{children}</div>;
+const Container = ({ children, ...rest }) => (
+  <div className={styles.Container} {...rest}>
+    {children}
+  </div>
+);
 
 Container.propTypes = {
   children: () => {},

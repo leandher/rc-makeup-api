@@ -4,7 +4,8 @@ import { Search } from 'react-feather';
 import Select from 'react-select';
 
 import { Segment } from '../../../../components';
-import './Filter.css';
+import styles from './Filter.module.css';
+import './select.css';
 
 type Props = {
   tags: Array<{}>,
@@ -50,12 +51,12 @@ class Filter extends Component<Props> {
     const { tags } = this.props;
 
     return (
-      <div className="Fields-Container">
-        <div className="Field">
-          <div className="Field-Label">
+      <div className={styles.Fields_Container}>
+        <div className={styles.Field}>
+          <div className={styles.Field_Label}>
             <span title="Products' Tags">Tags:</span>
           </div>
-          <div className="Field-Input">
+          <div className={styles.Field_Input}>
             <Select
               ref={ref => {
                 if (ref) {
@@ -78,12 +79,12 @@ class Filter extends Component<Props> {
     const { filter } = this.state;
 
     return (
-      <div className="Button-Container">
-        <button type="button" onClick={() => onSearch(filter)} className="Button">
-          <span className="Button-Content">
+      <div className={styles.Button_Container}>
+        <button type="button" onClick={() => onSearch(filter)} className={styles.Button}>
+          <span className={styles.Button_Content}>
             <Search color="white" size={24} />
           </span>
-          <span className="Button-Overlay" />
+          <span className={styles.Button_Overlay} />
         </button>
       </div>
     );

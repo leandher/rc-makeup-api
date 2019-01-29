@@ -1,6 +1,6 @@
 import React, { Component, Fragment, ReactElement } from 'react';
 
-import './Modal.css';
+import styles from './Modal.module.css';
 
 type Props = {
   open: Boolean,
@@ -14,10 +14,10 @@ class Modal extends Component<Props> {
     const { open, onClose, children } = this.props;
     return (
       <Fragment>
-        <div className="Mask" hidden={!open} onClick={onClose} role="presentation" />
-        <div className="Modal-Container" hidden={!open}>
-          <div className="Modal-Content">{children}</div>
-          <button type="button" className="CloseButton" onClick={onClose} />
+        <div className={styles.Mask} hidden={!open} onClick={onClose} role="presentation" />
+        <div className={styles.Modal_Container} hidden={!open}>
+          <div className={styles.Modal_Content}>{children}</div>
+          <button type="button" className={styles.CloseButton} onClick={onClose} />
         </div>
       </Fragment>
     );

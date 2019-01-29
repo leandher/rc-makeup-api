@@ -2,7 +2,8 @@ import React, { Component, ReactElement } from 'react';
 import PaginationComponent from 'react-js-pagination';
 
 import Cell from './Cell';
-import './Table.css';
+import styles from './Table.module.css';
+import './pagination.css';
 
 type Props = {
   hidePagination: Boolean,
@@ -61,7 +62,7 @@ class Table extends Component<Props> {
     const { activePage } = this.state;
 
     return (
-      <div className="Pagination-Container">
+      <div className={styles.Pagination_Container}>
         <PaginationComponent
           activePage={activePage}
           totalItemsCount={items.length}
@@ -93,7 +94,7 @@ class Table extends Component<Props> {
     return (
       <tr
         key={`row-${rowIndex}`}
-        className="Row"
+        className={styles.Row}
         role="presentation"
         {...onRowClick && {
           onClick: () => {
@@ -125,7 +126,7 @@ class Table extends Component<Props> {
     const { columns, items, hidePagination } = this.props;
 
     const theadContent = (
-      <tr key="heading" className="Row">
+      <tr key="heading" className={styles.Row}>
         {columns.map(this.renderHeadingRow)}
       </tr>
     );
@@ -135,9 +136,9 @@ class Table extends Component<Props> {
     const tbodyContent = currentItems.map(this.renderRow);
 
     return (
-      <div className="Wrapper">
-        <div className="Table-Container">
-          <table className="Table">
+      <div className={styles.Wrapper}>
+        <div className={styles.Table_Container}>
+          <table className={styles.Table}>
             <thead>{theadContent}</thead>
             <tbody>{tbodyContent}</tbody>
           </table>

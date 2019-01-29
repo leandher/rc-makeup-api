@@ -4,7 +4,7 @@ import { ArrowLeft } from 'react-feather';
 import { Spinner, Container, Segment } from '../../../components';
 import { Colors } from '../components';
 
-import './Detail.css';
+import styles from './Detail.module.css';
 
 const formatNumber = (value: Number) => Number((value * 100) / 5).toFixed(2);
 
@@ -44,11 +44,11 @@ class Detail extends Component<Props> {
 
     return (
       <Segment>
-        <h1 className="Detail-Name">{name}</h1>
+        <h1 className={styles.Detail_Name}>{name}</h1>
         <hr />
-        <div className="Main-Details">
-          <img src={image_link} alt={name} className="Detail-Image" />
-          <div className="Details">
+        <div className={styles.Main_Details}>
+          <img src={image_link} alt={name} className={styles.Detail_Image} />
+          <div className={styles.Details}>
             <h4>
               <strong>Brand: </strong>
               {brand}
@@ -74,7 +74,7 @@ class Detail extends Component<Props> {
         <hr />
         {tag_list.map(tag => (
           <span
-            className="Tag"
+            className={styles.Tag}
             key={tag}
             role="presentation"
             onClick={() => {
@@ -85,7 +85,7 @@ class Detail extends Component<Props> {
           </span>
         ))}
 
-        <div role="presentation" className="GoBack" onClick={this.goBack}>
+        <div role="presentation" className={styles.GoBack} onClick={this.goBack}>
           <ArrowLeft />
           <span style={{ margin: '0 10px' }}>Go back</span>
         </div>

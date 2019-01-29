@@ -1,8 +1,12 @@
 import React from 'react';
 
-import './Segment.css';
+import styles from './Segment.module.css';
 
-const Segment = ({ children, ...rest }) => <div className="Segment" {...rest}>{children}</div>;
+const Segment = ({ children, ...rest }) => (
+  <div className={styles.Segment} {...rest}>
+    {children}
+  </div>
+);
 
 Segment.propTypes = {
   children: () => {},

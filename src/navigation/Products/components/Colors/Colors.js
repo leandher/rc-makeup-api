@@ -1,12 +1,12 @@
 import React from 'react';
-import './Colors.css';
+import styles from './Colors.module.css';
 
 const Colors = ({ colors }) => (
-  <div className="Color-Section">
+  <div className={styles.Color_Section}>
     {colors.map(({ hex_value: hexValue, colour_name: name }, index) => (
       <div
         key={`${hexValue}-${index}`}
-        className="Color"
+        className={styles.Color}
         style={{ backgroundColor: hexValue }}
         title={name}
       />

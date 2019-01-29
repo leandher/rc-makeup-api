@@ -1,0 +1,17 @@
+.select__menu {
+  z-index: 1000 !important;
+}
+
+.select__multi-value {
+  background-color: #c9a654 !important;
+}
+
+.select__multi-value__label,
+.select__multi-value__remove {
+  color: whitesmoke !important;
+}
+
+.select__multi-value__remove:hover {
+  background-color: rgba(224, 224, 224, 0.3) !important;
+  cursor: pointer;
+}

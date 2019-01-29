@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './Image.css';
+import styles from './Image.module.css';
 
 const Image = ({ src, name, onClick }) => (
-  <img src={src} alt={name} className="Image" onClick={onClick} role="presentation" />
+  <img src={src} alt={name} className={styles.Image} onClick={onClick} role="presentation" />
 );
 
 Image.defaultProps = {};
