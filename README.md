@@ -1,5 +1,7 @@
 # 7egend Web challenge
 
+[Live Demo](https://makeup-ui.firebaseapp.com)
+
 ## Available Scripts
 
 In the project directory, you can run:

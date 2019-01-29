@@ -7,29 +7,45 @@ import styles from './Sidebar.module.css';
 
 type Props = {
   children: ReactElement,
+  onSetOpen: () => {},
 };
 class Sidebar extends Component<Props> {
   state = {};
 
-  renderContent = () => (
-    <Header
-      title="React Makeup"
-      style={{
-        width: 256,
-        height: '100%',
-      }}
-    >
-      <div className={styles.Sidebar_List}>
-        <Link to="/home" className={styles.Sidebar_Item}>
-          Home
-        </Link>
-        <Link to="/list" className={styles.Sidebar_Item}>
-          Makeup List
-        </Link>
-        <hr />
-      </div>
-    </Header>
-  );
+  renderContent = () => {
+    const { onSetOpen } = this.props;
+    return (
+      <Header
+        title="React Makeup"
+        style={{
+          width: 256,
+          height: '100%',
+        }}
+      >
+        <div className={styles.Sidebar_List}>
+          <Link
+            to="/home"
+            className={styles.Sidebar_Item}
+            onClick={() => {
+              onSetOpen(false);
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/list"
+            className={styles.Sidebar_Item}
+            onClick={() => {
+              onSetOpen(false);
+            }}
+          >
+            Makeup List
+          </Link>
+          <hr />
+        </div>
+      </Header>
+    );
+  };
 
   render() {
     const { children, ...rest } = this.props;

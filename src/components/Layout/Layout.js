@@ -52,7 +52,7 @@ class Layout extends Component<Props> {
         alignItems: 'center',
       }}
     >
-      {<Menu onClick={this.handleOpen} color="white" size={24} />}
+      {<Menu onClick={this.handleOpen} color="white" size={24} style={{ zIndex: 19 }} />}
       <span style={{ marginLeft: 10 }}>React Makeup API</span>
     </span>
   );
@@ -68,9 +68,6 @@ class Layout extends Component<Props> {
         styles={{
           sidebar: { zIndex: 20 },
           overlay: { zIndex: 19 },
-          root: {
-            height: '100%',
-          },
         }}
       >
         {!docked ? <Header title={this.renderHeaderContent()}>{children}</Header> : children}
