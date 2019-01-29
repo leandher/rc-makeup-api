@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { is } from 'immutable';
+import { Search } from 'react-feather';
 import Select from 'react-select';
 
 import { Segment } from '../../../../components';
-import Search from './assets/Search';
 import './Filter.css';
 
 type Props = {
@@ -80,7 +80,10 @@ class Filter extends Component<Props> {
     return (
       <div className="Button-Container">
         <button type="button" onClick={() => onSearch(filter)} className="Button">
-          <Search />
+          <span className="Button-Content">
+            <Search color="white" size={24} />
+          </span>
+          <span className="Button-Overlay" />
         </button>
       </div>
     );

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { ArrowLeft } from 'react-feather';
 
 import { Spinner, Container, Segment } from '../../../components';
 import { Colors } from '../components';
-import Arrow from './assets/Arrow';
 
 import './Detail.css';
 
@@ -10,6 +10,7 @@ const formatNumber = (value: Number) => Number((value * 100) / 5).toFixed(2);
 
 type Props = {
   product: any,
+  history: any,
 };
 class Detail extends Component<Props> {
   state = {};
@@ -28,7 +29,7 @@ class Detail extends Component<Props> {
   };
 
   renderProduct = () => {
-    const { product } = this.props;
+    const { product, history } = this.props;
     const {
       name,
       image_link,
@@ -71,18 +72,21 @@ class Detail extends Component<Props> {
           </div>
         </div>
         <hr />
-        <div className="Details">
-          <h4>
-            <strong>Tags: </strong>
-            <ul>
-              {tag_list.map(tag => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-          </h4>
-        </div>
+        {tag_list.map(tag => (
+          <span
+            className="Tag"
+            key={tag}
+            role="presentation"
+            onClick={() => {
+              history.push(`/list/product_tags=${tag}`);
+            }}
+          >
+            {tag}
+          </span>
+        ))}
+
         <div role="presentation" className="GoBack" onClick={this.goBack}>
-          <Arrow />
+          <ArrowLeft />
           <span style={{ margin: '0 10px' }}>Go back</span>
         </div>
       </Segment>

@@ -10,7 +10,7 @@
   margin: 0 3px 3px 3px;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 800px) {
   .Color-Section .Color {
     width: 0.5em;
     height: 0.5em;

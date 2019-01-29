@@ -128,8 +128,8 @@ tbody tr:hover {
 .pagination > .active > span:hover {
   z-index: 3;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.54);
-  border-color: rgba(0, 0, 0, 0.54);
+  background-color: #c9a654;
+  border-color: #b58109;
   cursor: default;
 }
 .pagination > .disabled > a,

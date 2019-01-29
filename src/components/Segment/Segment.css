@@ -11,7 +11,7 @@
   width: calc(100% - 40px);
 }
 
-@media (max-width: 639px) {
+@media (max-width: 800px) {
   .Segment {
     padding: 10px;
     margin: 10px;

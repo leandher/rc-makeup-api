@@ -21,3 +21,5 @@ Install all dependencies.
 - [react-js-pagination](https://github.com/vayser/react-js-pagination): React library used to implements paginagion, I've decised to use this lib, because was easier to integrate with my [Table](https://github.com/leandher/rc-makeup-api/blob/master/src/components/Table/Table.js) component then other pagination components and the ui presentation looks like ok;
 - [react-select](https://github.com/jedwatson/react-select): React library used on tag filter, great ui presentation and easy usage. I've already used on other project;
 - [Recompose](https://github.com/acdlite/recompose): It is a toolkit for creating composable pipelines of higher order components. It allows you to easily separate your logic from your components, creating re-usable building blocks. You can use it to drive your presentational components on any platform React supports.
+- [react-feather](https://github.com/feathericons/react-feather): Used as icons package. Feather is a collection of simply beautiful open source icons designed by [Cole Bemis](https://github.com/colebemis/).
+- [react-sidebar](https://github.com/balloob/react-sidebar): Used as sidebar package.

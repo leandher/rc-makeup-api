@@ -1,0 +1,24 @@
+.Root-Container {
+  font-family: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif';
+  font-weight: 300;
+}
+
+.Header {
+  background-color: #e0c68a;
+  color: white;
+  padding: 16px;
+  font-size: 1.5em;
+}
+
+@media (min-width: 800px) {
+  .Header {
+    min-height: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Header {
+    max-height: 30px;
+    padding: 10px;
+  }
+}

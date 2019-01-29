@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { ProductsList, ProductDetail } from './Products';
+import { Layout } from '../components';
 
 class Navigator extends Component {
   renderScreens = () => (
@@ -47,9 +48,11 @@ class Navigator extends Component {
   render() {
     return (
       <Router>
-        <div className="Navigator">
-          <div className="Router">{this.renderScreens()}</div>
-        </div>
+        <Layout>
+          <div className="Navigator">
+            <div className="Router">{this.renderScreens()}</div>
+          </div>
+        </Layout>
       </Router>
     );
   }
