@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+
 import {
   Spinner, Table, Container, Segment,
 } from '../../../components';
 import { Colors, Filter, Image } from '../components';
-import Modal from '../Modal';
 
 const formatNumber = (value: Number) => Number((value * 100) / 5).toFixed(2);
 
@@ -84,14 +86,25 @@ class List extends Component<Props> {
     return (
       <Container>
         <Spinner />
-        <Modal
+        {/* <Modal
           product={productName}
           image={imageLink}
           onClose={() => {
             changeModalVisible(false);
           }}
           open={modalVisible}
-        />
+        /> */}
+        {modalVisible && (
+          <Lightbox
+            imageTitle={productName}
+            mainSrc={imageLink}
+            onCloseRequest={() => {
+              changeModalVisible(false);
+            }}
+            enableZoom={false}
+            imagePadding="0.4rem"
+          />
+        )}
         <Filter tags={tags} onSearch={handleFilter} defaultFilters={defaultFilters} />
         <Segment style={{ maxHeight: 'calc(100vh - 40px)' }}>
           <Table columns={columns} items={products} onRowClick={handleRowClick} />

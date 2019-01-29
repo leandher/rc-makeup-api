@@ -45,10 +45,17 @@ class Layout extends Component<Props> {
     }
   };
 
-  renderHeaderContent = () => {
-    const { docked } = this.state;
-    return <span>{!docked && <Menu onClick={this.handleOpen} color="white" size={24} />}</span>;
-  };
+  renderHeaderContent = () => (
+    <span
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      {<Menu onClick={this.handleOpen} color="white" size={24} />}
+      <span style={{ marginLeft: 10 }}>React Makeup API</span>
+    </span>
+  );
 
   render() {
     const { children } = this.props;
@@ -60,7 +67,7 @@ class Layout extends Component<Props> {
         onSetOpen={this.onSetOpen}
         styles={{ sidebar: { zIndex: 20 }, overlay: { zIndex: 19 } }}
       >
-        <Header title={this.renderHeaderContent()}>{children}</Header>
+        {!docked ? <Header title={this.renderHeaderContent()}>{children}</Header> : children}
       </Sidebar>
     );
   }
