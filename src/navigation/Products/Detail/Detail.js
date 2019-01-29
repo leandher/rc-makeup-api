@@ -46,8 +46,8 @@ class Detail extends Component<Props> {
       <Segment>
         <h1 className={styles.Detail_Name}>{name}</h1>
         <hr />
+        <img src={image_link} alt={name} className={styles.Detail_Image} />
         <div className={styles.Main_Details}>
-          <img src={image_link} alt={name} className={styles.Detail_Image} />
           <div className={styles.Details}>
             <h4>
               <strong>Brand: </strong>
@@ -72,22 +72,28 @@ class Detail extends Component<Props> {
           </div>
         </div>
         <hr />
-        {tag_list.map(tag => (
-          <span
-            className={styles.Tag}
-            key={tag}
-            role="presentation"
-            onClick={() => {
-              history.push(`/list/product_tags=${tag}`);
-            }}
-          >
-            {tag}
-          </span>
-        ))}
+        <div
+          className={styles.Footer}
+        >
+          <div>
+            {tag_list.map(tag => (
+              <span
+                className={styles.Tag}
+                key={tag}
+                role="presentation"
+                onClick={() => {
+                  history.push(`/list/product_tags=${tag}`);
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
 
-        <div role="presentation" className={styles.GoBack} onClick={this.goBack}>
-          <ArrowLeft />
-          <span style={{ margin: '0 10px' }}>Go back</span>
+          <div role="presentation" className={styles.GoBack} onClick={this.goBack}>
+            <ArrowLeft />
+            <span style={{ margin: '0 10px' }}>Go back</span>
+          </div>
         </div>
       </Segment>
     );

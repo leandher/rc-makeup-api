@@ -4,8 +4,8 @@
 }
 
 .Detail_Image {
-  width: 40%;
-  height: auto;
+  width: auto;
+    height: auto;
 }
 
 .Details h4 {
@@ -14,9 +14,9 @@
 }
 
 .Main_Details {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 
 .GoBack {
@@ -58,7 +58,12 @@ h4 {
     display: block;
   }
   .Detail_Image {
-    width: 100%;
+    width: auto;
     height: auto;
+  }
+  .Footer {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-end;
   }
 }

@@ -65,7 +65,13 @@ class Layout extends Component<Props> {
         docked={docked}
         open={open}
         onSetOpen={this.onSetOpen}
-        styles={{ sidebar: { zIndex: 20 }, overlay: { zIndex: 19 } }}
+        styles={{
+          sidebar: { zIndex: 20 },
+          overlay: { zIndex: 19 },
+          root: {
+            height: '100%',
+          },
+        }}
       >
         {!docked ? <Header title={this.renderHeaderContent()}>{children}</Header> : children}
       </Sidebar>
