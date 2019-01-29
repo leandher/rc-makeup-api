@@ -7,8 +7,12 @@ import { is } from 'immutable';
 import Detail from './Detail';
 import withMakeupContext from '../../../store/Makeup/Makeup.Consumer';
 
-const handleLoadProduct = ({ findOne }) => ({ id }) => {
-  findOne(id);
+const handleLoadProduct = ({ findOne, history }) => ({ id }) => {
+  if (id) {
+    findOne(id);
+  } else {
+    history.goBack();
+  }
 };
 
 const receiveChanges = (prevProps, { match }) => {

@@ -47,30 +47,6 @@
   cursor: pointer;
 }
 
-.Tag:before {
-  content: '';
-  position: absolute;
-  display: block;
-  left: -10.4px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #b58109;
-}
-
-.Tag:after {
-  content: '';
-  background-color: white;
-  border-radius: 50%;
-  width: 2px;
-  height: 2px;
-  display: block;
-  position: absolute;
-  left: -4.5px;
-  top: 8.5px;
-}
-
 h1,
 h4 {
   font-weight: 100;

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { ProductsList, ProductDetail } from './Products';
+import Home from './Home';
 import { Layout } from '../components';
 
 class Navigator extends Component {
@@ -17,11 +18,13 @@ class Navigator extends Component {
         render={() => (
           <Redirect
             to={{
-              pathname: '/list',
+              pathname: '/home',
             }}
           />
         )}
       />
+
+      <Route exact path="/home" component={Home} />
 
       <Route exact path="/list" component={ProductsList} />
       <Route exact path="/list/:filter?" component={ProductsList} />
